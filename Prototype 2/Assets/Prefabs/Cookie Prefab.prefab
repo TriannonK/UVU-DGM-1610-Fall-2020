@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3150483433040183832}
   - component: {fileID: 4906896728964857119}
   - component: {fileID: 732876965267504816}
+  - component: {fileID: -1050748828039904019}
   m_Layer: 0
   m_Name: Cookie Prefab
   m_TagString: Untagged
@@ -110,3 +111,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   topBounds: 30
   lowerbounds: -10
+--- !u!114 &-1050748828039904019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3150483433042451672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8002e1e55bbc4359be57cd0ca883699, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
