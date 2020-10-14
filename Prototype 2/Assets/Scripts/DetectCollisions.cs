@@ -8,6 +8,6 @@ public class DetectCollisions : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         Destroy(gameObject);
-        Destroy(other.gameobject);
+        Destroy(other.gameObject);
     }
 }
