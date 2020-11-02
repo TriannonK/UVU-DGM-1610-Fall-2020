@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space)&& isGrounded == true && !gameOver)
         {
             isGrounded = false;
-            playerAudio.PlayOneShoot(jumpSound, 1.0f);
+            playerAudio.PlayOneShot(jumpSound, 1.0f);
             playerRB.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             playerAnim.SetTrigger("Jump_trig");
             dirtParticle.Stop();
@@ -62,7 +62,7 @@ public class PlayerController : MonoBehaviour
             gameOver = true;
             Debug.Log("Game Over Man! -- Game Over");
             explosionParticle.Play();
-            playerAudio.PlayOneShoot(crashSound, 1.0f);
+            playerAudio.PlayOneShot(crashSound, 1.0f);
             playerAnim.SetBool("Death_b", true);
             playerAnim.SetInteger("DeathType_int", 1);
             dirtParticle.Stop();
