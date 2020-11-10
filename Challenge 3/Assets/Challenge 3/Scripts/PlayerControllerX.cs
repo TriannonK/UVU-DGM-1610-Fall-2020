@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Diagnostics.DebuggerDisplay("{" + nameof(GetDebuggerDisplay) + "(),nq}")]
 public class PlayerControllerX : MonoBehaviour
 {
     public bool isLowEnough;
@@ -68,9 +67,4 @@ public class PlayerControllerX : MonoBehaviour
             }
 
         }
-    }
-
-    private string GetDebuggerDisplay()
-    {
-        return ToString();
     }

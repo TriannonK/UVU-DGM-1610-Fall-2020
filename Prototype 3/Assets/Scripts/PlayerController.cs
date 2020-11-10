@@ -40,12 +40,12 @@ public class PlayerController : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space) && isGrounded == true && !gameOver)
         {
+
             isGrounded = false;
-            playerAudio.PlayOneShot(jumpSound, 1.0f);
             playerRB.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             playerAnim.SetTrigger("Jump_trig");
             dirtParticle.Stop();
-            isGrounded = true;
+            
             
         }
     }
