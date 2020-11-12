@@ -314,7 +314,7 @@ AudioSource:
   m_Volume: 0.32
   m_Pitch: 1
   Loop: 0
-  Mute: 1
+  Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -551,7 +551,7 @@ MonoBehaviour:
   jumpForce: 10
   gravityMod: 1
   isGrounded: 1
-  gameOver: 1
+  gameOver: 0
   explosionParticle: {fileID: 1455957805}
   dirtParticle: {fileID: 1639288320}
   jumpSound: {fileID: 8300000, guid: 0f7d0b7c3397f4dac91f20e8a77d2d57, type: 3}

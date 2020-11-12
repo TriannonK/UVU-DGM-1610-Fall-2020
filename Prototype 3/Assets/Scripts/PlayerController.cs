@@ -45,6 +45,7 @@ public class PlayerController : MonoBehaviour
             playerRB.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             playerAnim.SetTrigger("Jump_trig");
             dirtParticle.Stop();
+            isGrounded = true;
             
             
         }
