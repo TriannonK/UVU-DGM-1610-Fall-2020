@@ -8,6 +8,9 @@ public class PlayerController : MonoBehaviour
     private float xrange = 10;
     private Rigidbody playerRb;
 
+    public bool hasPowerUp;
+    public GameObject powerUpIndicator;
+
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +40,28 @@ public class PlayerController : MonoBehaviour
         if (transform.position.x > xrange)
         {
             transform.position = new Vector3(xrange, transform.position.y, transform.position.z);
+        }
+
+        powerUpIndicator.transform.position = transform.position + new Vector3(0, 9.0f, 0); 
+    }
+
+    // Makes it so the player knows it has a powerup
+    private void OnTriggerEnter(Collider collider)
+    {
+        if (collider.CompareTag("PowerUp"))
+        {
+            hasPowerUp = true;
+            Debug.Log("PowerUp = " + hasPowerUp);
+            Destroy(collider.gameObject);
+            StartCoroutine(PowerUpCountDown());
+            powerUpIndicator.gameObject.SetActive(true);
+        }
+
+        // Gets rid of powerup after a certain amount of seconds
+        IEnumerator PowerUpCountDown()
+        {
+            yield return new WaitForSeconds(7); hasPowerUp = false;
+            powerUpIndicator.gameObject.SetActive(false);
         }
     }
 }
