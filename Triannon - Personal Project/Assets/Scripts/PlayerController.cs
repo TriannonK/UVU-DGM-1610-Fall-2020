@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
             transform.position = new Vector3(xrange, transform.position.y, transform.position.z);
         }
 
-        powerUpIndicator.transform.position = transform.position + new Vector3(0, 9.0f, 0); 
+        powerUpIndicator.transform.position = new Vector3(0, 9.0f, 0); 
     }
 
     // Makes it so the player knows it has a powerup
