@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 254641194211171519}
   - component: {fileID: 7190767339437180086}
   - component: {fileID: 6874199808546876313}
+  - component: {fileID: 3905687011927812686}
   m_Layer: 0
   m_Name: Skull_01
-  m_TagString: Untagged
+  m_TagString: Bad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -112,3 +113,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.42912176, y: 0.5520757, z: 0.46483076}
   m_Center: {x: 0, y: -0.02673658, z: -0.023982435}
+--- !u!114 &3905687011927812686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278481031846027431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9dd835151de04f0baed5e8bff67bd52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointValue: -10
+  explosionParticle: {fileID: 3199346384015752365, guid: 307229a5540374aae98859caad2128a3,
+    type: 3}
