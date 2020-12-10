@@ -4,22 +4,26 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    public GameObject arrowPrefab;
-    public float respawnTime = 1.0f;
-    private Vector3 screenBounds;
-
+    public GameObject[] arrowPrefab;
+    public int arrowIndex;
+    public float spawnRangeX = 10;
+    public float spawnPosZ = -25;
+    public float startDelay, spawnInterval;
+    
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
-        StartCoroutine(arrowWave());
+        InvokeRepeating("SpawnArrows", startDelay, spawnInterval);
     }
 
-    private void spawnArrows()
+    private void SpawnArrows()
     {
-        GameObject a = Instantiate(arrowPrefab) as GameObject;
-        a.transform.position = new Vector3(Random.Range(-screenBounds.x, screenBounds.x), 0, screenBounds.z * -2);
+        Vector3 spawnPos = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), 0, spawnPosZ);
+        int arrowIndex = Random.Range(0, arrowPrefab.Length);
+        Debug.Log(arrowIndex);
+        Instantiate(arrowPrefab[arrowIndex], spawnPos, arrowPrefab[arrowIndex].transform.rotation);
 
     }
 
@@ -29,12 +33,5 @@ public class SpawnManager : MonoBehaviour
 
     }
 
-    IEnumerator arrowWave()
-    {
-        while (true)
-        {
-            yield return new WaitForSeconds(respawnTime);
-            spawnArrows();
-        }
-    }
+    
 } 

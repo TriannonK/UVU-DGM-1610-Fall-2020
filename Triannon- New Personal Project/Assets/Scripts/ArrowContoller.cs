@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Runtime;
+using System;
 
 public class ArrowContoller : MonoBehaviour
 {
     public float speed = 10.0f;
-
+    
     private float zrange = 25;
    
     private Rigidbody arrowsRb;
@@ -14,10 +16,11 @@ public class ArrowContoller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-         arrowsRb = this.GetComponent<Rigidbody>();
+        System.Random random = new System.Random();
+        arrowsRb = this.GetComponent<Rigidbody>();
 
         // move arrows forward
-        arrowsRb.velocity = new Vector3(0, 0, speed);
+        arrowsRb.velocity = new Vector3(0, 0, random.Next(15,25));
 
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
     }
