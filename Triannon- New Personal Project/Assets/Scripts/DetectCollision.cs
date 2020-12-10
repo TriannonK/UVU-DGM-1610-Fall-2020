@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DetectCollision : MonoBehaviour
 {
+    private GameManager gameManager;
     
     // Start is called before the first frame update
     void Start()
@@ -20,13 +21,16 @@ public class DetectCollision : MonoBehaviour
             Debug.Log("Game Over");
             Time.timeScale = 0;
         }
+
+        if (!gameObject.CompareTag("Enemy"))
+        {
+            gameManager.GameOver();
+        }
+
     }
     // Update is called once per frame
     void Update()
     {
        
     }
-
-   
-
 }
