@@ -8,7 +8,7 @@ public class ArrowContoller : MonoBehaviour
 {
     public float speed = 10.0f;
     
-    private float zrange = 25;
+    private float zrange = 35;
    
     private Rigidbody arrowsRb;
     private Vector3 screenBounds;
@@ -28,9 +28,12 @@ public class ArrowContoller : MonoBehaviour
 // Update is called once per frame
 void Update()
     {
-        if(transform.position.z < -zrange)
+        // destroys arrow prefabs when they leave the boundaries
+        if(transform.position.z > zrange)
         {
             Destroy(gameObject);
         }
     }
+
+    
 }

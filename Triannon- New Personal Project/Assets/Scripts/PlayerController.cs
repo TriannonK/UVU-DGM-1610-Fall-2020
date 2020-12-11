@@ -23,12 +23,6 @@ public class PlayerController : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
         playerRb.AddForce(Vector3.right * speed * horizontalInput);
 
-        // player jumps when space key pressed
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            playerRb.AddForce(Vector3.up * 6, ForceMode.Impulse);
-        }
-
         // keeps player within bounds
         if (transform.position.x < -xrange)
         {
